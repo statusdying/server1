@@ -6,18 +6,18 @@ kernel32 = ctypes.windll.kernel32
 kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)
 
 HEADER = 64
-#PORT = 16740
+#PORT = 17934
 PORT = 5050
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
-#SERVER = '3.127.181.115'
+#SERVER = '3.142.81.166'
 SERVER = socket.gethostbyname(socket.gethostname()) 
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.settimeout(None)
+client.settimeout(500000)
 client.connect(ADDR)
-
+client.settimeout(None)
 
 
 print('Tvůj nick: ')
